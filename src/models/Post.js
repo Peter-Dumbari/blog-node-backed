@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema(
   {
     author: {
-      types: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
       require: true,
     },
 
@@ -25,7 +25,7 @@ const postSchema = new mongoose.Schema(
     likes: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "user",
       },
     ],
   },
@@ -36,4 +36,4 @@ const postSchema = new mongoose.Schema(
 
 postSchema.index({ title: "text", body: "text", tags: 1 });
 
-module.exports = mongoose.model("Post", postSchema);
+module.exports = mongoose.model("post", postSchema);

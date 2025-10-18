@@ -7,4 +7,9 @@ const PORT = process.env.PORT || 5000;
 
 connectDB(process.env.MONGO_URI);
 const server = http.createServer(app);
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+server.listen(PORT, function () {
+  console.log("(----------------------------------------)");
+  console.log("|          Server Started at...          |");
+  console.log("|          http://localhost:" + PORT + "         |");
+  console.log("(----------------------------------------)");
+});
