@@ -16,6 +16,9 @@ exports.register = async (req, res) => {
   const { username, name, email, password } = req.body;
 
   try {
+    const existingUsername = await User.findOne({ username });
+    if (existingUsername)
+      return res.status(400).json({ error: "Username already taken" });
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ error: "Email already exist" });
 
@@ -47,15 +50,15 @@ exports.login = async (req, res) => {
 
   const { email, password } = req.body;
   try {
-    const user = await User.findOne(email);
+    const user = await User.findOne({ email });
     if (!user) return res.status(404).json({ error: "Invalid Credentials" });
-
     const matched = await bcrypt.compare(password, user.password);
     if (!matched) return res.status(404).json({ error: "Invalid Credentials" });
 
     const token = signToken(user._id);
     return res.status(200).json({
       token,
+      status: "success",
       user: {
         id: user._id,
         username: user.fullname,
