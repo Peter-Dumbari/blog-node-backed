@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
   const { username, name, email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email });
+    let user = await User.findOne({ email });
     if (user) return res.status(400).json({ error: "Email already exist" });
 
     const hashed = await bcrypt.hash(password, 10);
@@ -25,6 +25,7 @@ exports.register = async (req, res) => {
 
     const token = signToken(user._id);
     return res.status(200).json({
+      status: "success",
       token,
       user: {
         id: user._id,
@@ -32,6 +33,7 @@ exports.register = async (req, res) => {
         name: user.name,
         email: user.email,
       },
+      message: "Registration successful",
     });
   } catch (error) {
     console.log("error", error);
