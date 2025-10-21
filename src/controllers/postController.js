@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const Post = require("../models/Post");
 const Comment = require("../models/Comment");
+const cloudinary = require("cloudinary").v2;
 
 exports.createPost = async (req, res) => {
   const errors = validationResult(req);
@@ -94,8 +95,9 @@ exports.updatePost = async (req, res) => {
     if (!post.author.equals(req.user._id))
       return res.status(403).json({ error: "Forbidden" });
 
-    const { title, body, tags } = req.body;
+    const { title, body, tags, type } = req.body;
     if (title) post.title = title;
+    if (type) post.type = type;
     if (body) post.body = body;
     if (tags) post.tags = tags.split(",").map((tag) => tag.trim());
     await post.save();
@@ -111,6 +113,8 @@ exports.deletePost = async (req, res) => {
     if (!post) return res.status(404).json({ error: "Post not found" });
     if (!post.author.equals(req.user._id))
       return res.status(403).json({ error: "Forbidden" });
+
+    await cloudinary.uploader.destroy(post.image.public_id);
 
     await Post.findByIdAndDelete(req.params.id);
     await Comment.deleteMany({ post: req.params.id });
