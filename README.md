@@ -53,7 +53,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 | ------ | ------------------------------------ | ------------------------ | ------------- |
 | POST   | `/api/auth/register`                 | Register a new user      | ❌ No         |
 | POST   | `/api/auth/login`                    | Login user and get token | ❌ No         |
-| GET    | `/api/users/:id`                     | Get My Posts             | ✅ Yes        |
+| GET    | `/api/user/:id`                      | Get My Posts             | ✅ Yes        |
 | POST   | `/api/posts`                         | Create a new post        | ✅ Yes        |
 | GET    | `/api/posts`                         | Get all posts            | ❌ No         |
 | GET    | `/api/posts/:id`                     | Get a single post        | ❌ No         |
