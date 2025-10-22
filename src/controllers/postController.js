@@ -41,7 +41,7 @@ exports.getPosts = async (req, res) => {
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(limit)
-        .populate("author", "username email")
+        .populate("author", "username email", "comment")
         .lean(),
     ]);
     return res.status(200).json({ page, limit, total, post });
