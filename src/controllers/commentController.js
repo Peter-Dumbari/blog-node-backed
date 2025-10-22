@@ -28,19 +28,19 @@ exports.createComment = async (req, res) => {
 };
 
 exports.deleteComment = async (req, res) => {
+  const { userId } = req.body;
   try {
     const comment = await Comment.findById(req.params.id);
     if (!comment) return res.status(404).json({ error: "Comment not found" });
 
     const post = await Post.findById(comment.post);
-    if (
-      !comment.author.equals(req.user._id) &&
-      !post.author.equals(req.user._id)
-    ) {
+    if (!comment.author.equals(userId) && !post.author.equals(userId)) {
       return res.status(403).json({ error: "Unauthorized action" });
     }
 
-    await comment.remove();
+    await comment.deleteOne();
+    await post.save();
+
     return res.status(200).json({ message: "Comment deleted" });
   } catch (error) {
     console.log("error", error);
