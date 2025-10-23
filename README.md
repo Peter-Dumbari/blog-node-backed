@@ -5,6 +5,18 @@ It allows users to **register, login, create posts, comment, like posts**, and m
 
 ---
 
+## 🌍 Live API
+
+🚀 **Base URL:** [https://blog-api-w417.onrender.com](https://blog-api-w417.onrender.com)
+
+> You can start testing the API directly using the above link.  
+> Example:
+>
+> - **Get all posts:** `GET https://blog-api-w417.onrender.com/api/posts`
+> - **Register user:** `POST https://blog-api-w417.onrender.com/api/auth/register`
+
+---
+
 ## 🚀 Features
 
 - User authentication (register & login with JWT)
@@ -65,7 +77,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 
 ### Register User
 
-**POST** `/api/auth/register`
+**POST** `https://blog-api-w417.onrender.com/api/auth/register`
 
 #### Request Body
 
@@ -94,7 +106,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 ````markdown
 ### Like or Unlike Post
 
-**POST** `/api/posts/:id/like`
+**POST** `https://blog-api-w417.onrender.com/api/posts/:id/like`
 
 #### Request Body
 
@@ -117,7 +129,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 ````markdown
 ### Add Comment
 
-**POST** `/api/comment`
+**POST** `https://blog-api-w417.onrender.com//api/comment`
 
 #### Request Body
 
