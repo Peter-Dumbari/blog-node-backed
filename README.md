@@ -165,8 +165,8 @@ You can also:
 If you’d like to reach out personally or collaborate, feel free to contact me:
 
 📧 **Email:** peterdumbari08@gmail.com
-💬 **Twitter:** [@peterdumbari](https://twitter.com/peter-dumbari)
-💻 **LinkedIn:** [Peter Dumbari](https://linkedin.com/in/peter-dumbari)
+💬 **Twitter:** [@peterdumbari](https://twitter.com/PeterDumbari)
+💻 **LinkedIn:** [Peter Dumbari](https://linkedin.com/in/peterdumbari)
 
 ```
 
