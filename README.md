@@ -61,19 +61,19 @@ touch .env
 Below is the list of all API routes available in this project.  
 Each route includes the method, endpoint, description, and whether authentication is required.
 
-| Method | Endpoint                             | Description              | Auth Required |
-| ------ | ------------------------------------ | ------------------------ | ------------- |
-| POST   | `/api/auth/register`                 | Register a new user      | ❌ No         |
-| POST   | `/api/auth/login`                    | Login user and get token | ❌ No         |
-| GET    | `/api/user/:id`                      | Get My Posts             | ✅ Yes        |
-| POST   | `/api/posts`                         | Create a new post        | ✅ Yes        |
-| GET    | `/api/posts`                         | Get all posts            | ❌ No         |
-| GET    | `/api/posts/:id`                     | Get a single post        | ❌ No         |
-| PUT    | `/api/posts/:id`                     | Update a post            | ✅ Yes        |
-| DELETE | `/api/posts/:id`                     | Delete a post            | ✅ Yes        |
-| POST   | `/api/posts/:id/like`                | Like or unlike a post    | ✅ Yes        |
-| POST   | `/api/posts/:id/comments`            | Add a comment            | ✅ Yes        |
-| DELETE | `/api/posts/:id/comments/:commentId` | Delete a comment         | ✅ Yes        |
+| Method | Endpoint                   | Description              | Auth Required |
+| ------ | -------------------------- | ------------------------ | ------------- |
+| POST   | `/api/auth/register`       | Register a new user      | ❌ No         |
+| POST   | `/api/auth/login`          | Login user and get token | ❌ No         |
+| GET    | `/api/user/:id`            | Get My Posts             | ✅ Yes        |
+| POST   | `/api/posts`               | Create a new post        | ✅ Yes        |
+| GET    | `/api/posts`               | Get all posts            | ❌ No         |
+| GET    | `/api/posts/:id`           | Get a single post        | ❌ No         |
+| PUT    | `/api/posts/:id`           | Update a post            | ✅ Yes        |
+| DELETE | `/api/posts/:id`           | Delete a post            | ✅ Yes        |
+| POST   | `/api/posts/like/:postId`  | Like or unlike a post    | ✅ Yes        |
+| POST   | `/api/comments`            | Add a comment            | ✅ Yes        |
+| DELETE | `/api/comments/:commentId` | Delete a comment         | ✅ Yes        |
 
 ### Register User
 
@@ -106,7 +106,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 ````markdown
 ### Like or Unlike Post
 
-**POST** `https://blog-api-w417.onrender.com/api/posts/:id/like`
+**POST** `https://blog-api-w417.onrender.com/api/posts/like/:id`
 
 #### Request Body
 
@@ -129,7 +129,7 @@ Each route includes the method, endpoint, description, and whether authenticatio
 ````markdown
 ### Add Comment
 
-**POST** `https://blog-api-w417.onrender.com//api/comment`
+**POST** `https://blog-api-w417.onrender.com//api/comments`
 
 #### Request Body
 
