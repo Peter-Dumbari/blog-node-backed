@@ -154,13 +154,13 @@ Each route includes the method, endpoint, description, and whether authenticatio
 ## 🗣️ Feedback & Support
 
 I’d love to hear your feedback, suggestions, or ideas to improve this project.
-If you find a bug or have a feature request, please open an issue on the [Issues page](https://github.com/Peter-Dumbari/blog-node-backend/issues).
+If you find a bug or have a feature request, please open an issue on the [Issues page](https://github.com/Peter-Dumbari/blog-node-backed/issues).
 
 You can also:
 
 - ⭐ Star this repository if you find it helpful
-- 🐛 Report bugs by creating a new [issue](https://github.com/Peter-Dumbari/blog-node-backend/issues/new)
-- 💡 Suggest new features via [feature requests](https://github.com/Peter-Dumbari/blog-node-backend/issues/new?template=feature_request.md)
+- 🐛 Report bugs by creating a new [issue](https://github.com/Peter-Dumbari/blog-node-backed/issues/new)
+- 💡 Suggest new features via [feature requests](https://github.com/Peter-Dumbari/blog-node-backed/issues/new?template=feature_request.md)
 
 If you’d like to reach out personally or collaborate, feel free to contact me:
 
